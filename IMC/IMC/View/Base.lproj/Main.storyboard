@@ -38,8 +38,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,5m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpM-tx-Mt1">
-                                                <rect key="frame" x="338" y="0.0" width="36" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,5 m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpM-tx-Mt1">
+                                                <rect key="frame" x="334" y="0.0" width="40" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -49,11 +49,14 @@
                                             <constraint firstAttribute="height" constant="21" id="GOR-PF-s1V"/>
                                         </constraints>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="spU-BI-oMb">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="spU-BI-oMb">
                                         <rect key="frame" x="-2" y="626" width="378" height="61"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="1Sg-wJ-sEd"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="heightSlideChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="a5S-2m-kio"/>
+                                        </connections>
                                     </slider>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="xfR-hB-6Ml">
                                         <rect key="frame" x="0.0" y="686" width="374" height="21"/>
@@ -64,8 +67,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="100kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9j-eD-jlG">
-                                                <rect key="frame" x="327.5" y="0.0" width="46.5" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="100 kg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9j-eD-jlG">
+                                                <rect key="frame" x="323" y="0.0" width="51" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -75,11 +78,14 @@
                                             <constraint firstAttribute="height" constant="21" id="WXo-Gt-QMs"/>
                                         </constraints>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ORo-Gc-Du5">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="ORo-Gc-Du5">
                                         <rect key="frame" x="-2" y="707" width="378" height="61"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="BCv-VH-uJk"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="weightSlideChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="kxx-d9-mP6"/>
+                                        </connections>
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTf-am-SC9">
                                         <rect key="frame" x="0.0" y="767" width="374" height="51"/>
@@ -91,6 +97,9 @@
                                         <state key="normal" title="CALCULATE">
                                             <color key="titleColor" systemColor="opaqueSeparatorColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="CalculatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="38I-wB-Dsu"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -104,15 +113,21 @@
                             <constraint firstItem="ilR-uL-KEa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bSa-sb-Yke"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="heightLabel" destination="rpM-tx-Mt1" id="gf4-Yp-oRL"/>
+                        <outlet property="heightSlider" destination="spU-BI-oMb" id="Qud-FY-ySy"/>
+                        <outlet property="weightLabel" destination="u9j-eD-jlG" id="xMD-9i-rI0"/>
+                        <outlet property="weightSlider" destination="ORo-Gc-Du5" id="DA6-cv-rrO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-26.086956521739133" y="75"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View Controller-->
         <scene sceneID="8uE-Fe-MU0">
             <objects>
-                <viewController id="pjg-xV-E2w" sceneMemberID="viewController">
+                <viewController id="pjg-xV-E2w" customClass="SecondViewController" customModule="IMC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hoZ-aB-FlV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
