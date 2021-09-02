@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Calculate View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="IMC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CalculateViewController" customModule="IMC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,18 +118,19 @@
                         <outlet property="heightSlider" destination="spU-BI-oMb" id="Qud-FY-ySy"/>
                         <outlet property="weightLabel" destination="u9j-eD-jlG" id="xMD-9i-rI0"/>
                         <outlet property="weightSlider" destination="ORo-Gc-Du5" id="DA6-cv-rrO"/>
+                        <segue destination="pjg-xV-E2w" kind="presentation" identifier="goToResult" id="uVB-f9-aQQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-26.086956521739133" y="75"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="8uE-Fe-MU0">
             <objects>
-                <viewController id="pjg-xV-E2w" customClass="SecondViewController" customModule="IMC" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pjg-xV-E2w" customClass="ResultViewController" customModule="IMC" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hoZ-aB-FlV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="result_background" translatesAutoresizingMaskIntoConstraints="NO" id="O5b-fe-BXv">
@@ -137,7 +138,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xDW-eJ-WeT">
-                                <rect key="frame" x="101" y="373.5" width="212" height="149"/>
+                                <rect key="frame" x="101" y="346.5" width="212" height="149"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOUR RESULT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8V-37-lIm">
                                         <rect key="frame" x="0.0" y="0.0" width="212" height="36"/>
@@ -160,12 +161,15 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BH9-nC-heQ">
-                                <rect key="frame" x="20" y="826" width="374" height="36"/>
+                                <rect key="frame" x="20" y="772" width="374" height="36"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="RECALCULATE">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="recalculatePressed:" destination="pjg-xV-E2w" eventType="touchUpInside" id="HkZ-N0-xko"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cfQ-yd-KJ7"/>
@@ -178,10 +182,14 @@
                             <constraint firstItem="xDW-eJ-WeT" firstAttribute="centerY" secondItem="hoZ-aB-FlV" secondAttribute="centerY" id="q0u-4z-A35"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="adviceResultLabel" destination="iCn-k4-xJf" id="yml-Sj-3T4"/>
+                        <outlet property="resultNumberLabel" destination="PTI-ZZ-p4D" id="gxM-fl-y3I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vhr-1o-XgP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="882.60869565217399" y="66.964285714285708"/>
+            <point key="canvasLocation" x="872" y="75"/>
         </scene>
     </scenes>
     <resources>
