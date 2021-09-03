@@ -14,32 +14,28 @@ class CalculateViewController: UIViewController {
     @IBOutlet weak var heightSlider: UISlider!
     @IBOutlet weak var weightSlider: UISlider!
     var imc: String = "0.0"
+    var calculator = CalculatorBrain()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     @IBAction func heightSlideChanged(_ sender: UISlider) {
-        let height = String(format: "%.2f", sender.value)
-        heightLabel.text = "\(height) m"
+        heightLabel.text = calculator.getHeightText(value: sender.value)
         
     }
     @IBAction func weightSlideChanged(_ sender: UISlider) {
-        let weight = String(format: "%.0f", sender.value)
-        weightLabel.text = "\(weight) kg"
+        weightLabel.text = calculator.getWeightText(value: sender.value)
     }
     
     @IBAction func CalculatePressed(_ sender: UIButton) {
-        var height = heightSlider.value
-        var weight = weightSlider.value
- 
-        imc = String(format: "%.1f", (weight / pow(height, 2)))
+        calculator.generateIMC(height: heightSlider.value, weight: weightSlider.value)
         self.performSegue(withIdentifier: "goToResult", sender: self)
-        
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResult" {
             let destinationVC = segue.destination as! ResultViewController
-            destinationVC.imcValue = imc
+            destinationVC.imcValue = calculator.getIMC()
         }
     }
 }
