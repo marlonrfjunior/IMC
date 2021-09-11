@@ -8,15 +8,16 @@
 import UIKit
 
 class ResultViewController: UIViewController {
-    var imcValue: String?
+    var imc: IMC?
     @IBOutlet weak var resultNumberLabel: UILabel!
     @IBOutlet weak var adviceResultLabel: UILabel!
+    @IBOutlet weak var backgroundPage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        resultNumberLabel.text = imcValue
-
-       
+        resultNumberLabel.text = imc?.getValue()
+        adviceResultLabel.text = imc?.getAdvice()
+        backgroundPage.tintColor = imc?.getColor()
     }
     
     @IBAction func recalculatePressed(_ sender: Any) {

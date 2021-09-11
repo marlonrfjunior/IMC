@@ -184,6 +184,7 @@
                     </view>
                     <connections>
                         <outlet property="adviceResultLabel" destination="iCn-k4-xJf" id="yml-Sj-3T4"/>
+                        <outlet property="backgroundPage" destination="O5b-fe-BXv" id="1W9-dn-TJb"/>
                         <outlet property="resultNumberLabel" destination="PTI-ZZ-p4D" id="gxM-fl-y3I"/>
                     </connections>
                 </viewController>

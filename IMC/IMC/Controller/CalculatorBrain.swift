@@ -5,17 +5,18 @@
 //  Created by Marlon Junior🦈⚓️ on 02/09/21.
 //
 
-import Foundation
+import UIKit
 
 struct CalculatorBrain {
-    var imc: String?
+    var imc: IMC?
     
     
     mutating func generateIMC( height: Float, weight: Float) {
-        imc = String(format: "%.1f", (weight / pow(height, 2)))
+        imc = IMC(value: weight / pow(height, 2))
     }
-    func getIMC() -> String {
-        return imc!
+    
+    func getIMC() -> IMC {
+        return imc ?? IMC(value: 0.00)
     }
     
     func getWeightText(value: Float)-> String{

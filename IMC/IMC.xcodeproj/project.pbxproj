@@ -15,6 +15,7 @@
 		69CE2A8926D9ED3E00A96256 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69CE2A8726D9ED3E00A96256 /* LaunchScreen.storyboard */; };
 		69CE2AAE26E0644800A96256 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CE2AAD26E0644800A96256 /* ResultViewController.swift */; };
 		69CE2AB026E1C0FD00A96256 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CE2AAF26E1C0FD00A96256 /* CalculatorBrain.swift */; };
+		69CE2AB226E66B5B00A96256 /* IMC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CE2AB126E66B5B00A96256 /* IMC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		69CE2A8A26D9ED3E00A96256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69CE2AAD26E0644800A96256 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		69CE2AAF26E1C0FD00A96256 /* CalculatorBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalculatorBrain.swift; path = IMC/Controller/CalculatorBrain.swift; sourceTree = SOURCE_ROOT; };
+		69CE2AB126E66B5B00A96256 /* IMC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IMC.swift; path = IMC/Controller/IMC.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				69CE2AAF26E1C0FD00A96256 /* CalculatorBrain.swift */,
+				69CE2AB126E66B5B00A96256 /* IMC.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69CE2A8126D9ED3C00A96256 /* CalculateViewController.swift in Sources */,
+				69CE2AB226E66B5B00A96256 /* IMC.swift in Sources */,
 				69CE2A7D26D9ED3C00A96256 /* AppDelegate.swift in Sources */,
 				69CE2A7F26D9ED3C00A96256 /* SceneDelegate.swift in Sources */,
 				69CE2AB026E1C0FD00A96256 /* CalculatorBrain.swift in Sources */,
