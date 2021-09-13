@@ -8,9 +8,9 @@
 import UIKit
  
 struct IMC{
-    var  value: Float
-    let advice: String
-    let  color: UIColor
+    var  value: Float?
+    let advice: String?
+    let  color: UIColor?
     
     init(value: Float) {
         self.value = value
@@ -27,14 +27,14 @@ struct IMC{
         }
     }
     func getValue() -> String{
-        return String(format: "%.1f",  value )
+        return String(format: "%.1f",  value ?? 0.00 )
     }
  
     func getColor() -> UIColor{
-        return color
+        return color ?? UIColor.white
     }
     
     func getAdvice() -> String {
-        return advice
+        return advice ?? ""
     }
 }

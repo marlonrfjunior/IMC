@@ -17,7 +17,7 @@ class ResultViewController: UIViewController {
         super.viewDidLoad()
         resultNumberLabel.text = imc?.getValue()
         adviceResultLabel.text = imc?.getAdvice()
-        backgroundPage.tintColor = imc?.getColor()
+        view.backgroundColor = imc?.getColor()
     }
     
     @IBAction func recalculatePressed(_ sender: Any) {
